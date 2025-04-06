@@ -1,1 +1,1 @@
-Initial repo
+This is a repo to capture notes

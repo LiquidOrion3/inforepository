@@ -1,11 +1,9 @@
 * pulling together a global git config
 	#alias pretty log
 	[alias]
-		plog = git log --pretty=oneline --graph --decorate --all
-		whoops = git reset --soft HEAD-1
-		pack = git archive --format=tar --output=git.repo.tar HEAD
-		
-
+		plog = log --pretty=oneline --graph --decorate --all
+		whoops = reset --soft HEAD-1
+		pack = archive --format=tar --output=git.repo.tar HEAD
 * Making git logs look pretty
 	git log --pretty=oneline --graph --decorate --all
 * Making empty commits to kick off CICD build

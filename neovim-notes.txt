@@ -1,0 +1,32 @@
+"Add mouse support
+set mouse=a
+"set incremental search
+set incsearch
+"set highlist search
+set hlsearch
+"ignore character case
+set ignorecase
+"use ignore case unless upper is specified
+set smartcase
+"use the system clipboard
+set clipboard=unnamedplus
+
+"MAPPINGS
+let mapleader =" "
+"When in insert mode, allow a quick write and esc
+inoremap ww silent <esc>:w<CR>silent 
+"When in terminal mode, add esc support
+tnoremap <Esc> <C-\><C-n> 
+"When in terminal mode, allow a quick esc and window change
+tnoremap <C-w>w <C-\><C-n>:wincmd w<CR>
+"When in normal mode, add quick buffer up command
+nnoremap <leader>j :bnext<CR>
+"When in normal mode, add quick buffer down command
+nnoremap <leader>k :bprev<CR>
+
+"Toggle numbers and relative numbers depending on mode
+augroup nuToggle
+  set number
+  autocmd BufEnter,FocusGained,InsertLeave, * set rnu
+  autocmd BufLeave,FocusLost,InsertEnter, * set rnu!
+augroup end
