@@ -1,0 +1,10 @@
+* setup klocwork environment
+	source kwenv.sh
+* start klocwork project
+	kw create <project_name> <path_to_src>
+* run analysis
+	kw build --build-dir <build_dir> <build_command>
+* review analysis
+	kw check
+	kw webview --project <project_name> --url
+

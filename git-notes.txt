@@ -1,0 +1,66 @@
+* pulling together a global git config
+	#alias pretty log
+	[alias]
+		plog = git log --pretty=oneline --graph --decorate --all
+		whoops = git reset --soft HEAD-1
+		pack = git archive --format=tar --output=git.repo.tar HEAD
+		
+
+* Making git logs look pretty
+	git log --pretty=oneline --graph --decorate --all
+* Making empty commits to kick off CICD build
+	git commit --allow empty -m'it works!'
+* Cleaning up local branches on remote removal
+	add to git config: git config --global fetch.prune true
+* Staging commits in git
+	git add -p
+* In git, stach individual files interactively
+	git stash -p 
+* look up gitmoji to add emoji to commits
+* in git, look at changes over time for a specific file
+	git log -p <file>
+* reword the last git commit message
+	git comit -V --amend
+	git commit --amend -m "new commit"
+* apply git stash to another branch
+	git stash ; git checkout <otherbranch> ; git stash apply
+	stash works on a stack, applying only applied the top of the stash
+	to both apply and take it off the stash
+	git stash pop
+* drop the git stash
+	git stash drop
+* find out who made specific changes to a file in git`
+	git blame <file>
+* apply a specifc commit from another branch in git
+	git cherry-pick <commit-hash>
+* add a description to the git stash
+	git stash push -m "work in progress"
+* create a archive of git repo at a specific commit
+	git archive --format=zip --output=repo.zip HEAD
+* add aliases to git config
+	git config --global alias.<handle> <command>
+	or under .gitconfig
+	[alias]
+		co = checkout
+* export a git branch with history
+	git bundle create <file> <branch_name>
+* clean up the files in the git ignore
+	git clean -X -f 
+* git dry run commands
+	add --dry-run
+* open all confliced files in an editor 
+	git diff --name-only |uniq|xargs vim
+* extract a file from another branch
+	git show <branch_name>:<file_name>
+* git add changes and commit in one command
+	git commit -am "commit_message"
+* add additional files to a commit
+	git add . ; git commit --amend --no-edit
+* revert to previous comit
+	git revert <comit_id>
+* overriding local changes with remote changes
+	git reset --hard origin/<branch>
+* git commit without changing the message
+	git commit --amend --no-edit
+* reset a git commit
+	git reset --soft HEAD-1
